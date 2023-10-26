@@ -20,10 +20,12 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_SPEED
 	elif Input.is_action_pressed("ui_left"):
-		$AnimatedSprite2D.play("walk").flip_h = true		
+		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.flip_h = true
 		velocity.x = -WALK_SPEED
 	elif Input.is_action_pressed("ui_right"):
 		$AnimatedSprite2D.play("walk")
+		$AnimatedSprite2D.flip_h = false
 		velocity.x =  WALK_SPEED
 	else:
 		$AnimatedSprite2D.play("idle")
