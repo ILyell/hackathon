@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://nblper2foxie"]
+
+[ext_resource type="PackedScene" uid="uid://dhrufa1xya27v" path="res://player.tscn" id="2_68dx5"]
+[ext_resource type="PackedScene" uid="uid://cat8yxkkynt32" path="res://resources/ground.tscn" id="2_f7i7s"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_68dx5")]
+position = Vector2(31, 448)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(333, 461)
+zoom = Vector2(1.73, 1.73)
+
+[node name="Ground" parent="." instance=ExtResource("2_f7i7s")]
+layer_0/tile_data = PackedInt32Array(2228224, 0, 0, 2228225, 65536, 0, 2228226, 65536, 0, 2228227, 65536, 0, 2228228, 65536, 0, 2228229, 131072, 0, 2228230, 196608, 0, 2293760, 0, 1, 2293761, 65536, 1, 2293762, 131072, 1, 2293763, 131072, 1, 2293764, 65536, 1, 2293765, 131072, 1, 2293766, 196608, 1, 2359296, 0, 2, 2359298, 0, 2, 2359301, 0, 2, 2359302, 131072, 2, 2359299, 196608, 2, 2359300, 65536, 2, 2359297, 131072, 2)

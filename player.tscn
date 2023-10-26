@@ -1,0 +1,108 @@
+[gd_scene load_steps=15 format=3 uid="uid://dhrufa1xya27v"]
+
+[ext_resource type="Texture2D" uid="uid://bn0u50py64ipn" path="res://assets/free-swamp-game-tileset-pixel-art/frog.png" id="1_7arrh"]
+[ext_resource type="Script" path="res://player.gd" id="1_qtvtf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7763y"]
+radius = 6.40158
+height = 18.4103
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w04r"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne7lq"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukmg1"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(128, 114, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtf0i"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnawu"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(32, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkt84"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u04jc"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51ylp"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(80, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojy6"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(96, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4cis"]
+atlas = ExtResource("1_7arrh")
+region = Rect2(112, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qqw81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w04r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne7lq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukmg1")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtf0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnawu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkt84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u04jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51ylp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xojy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4cis")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_qtvtf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.999999)
+rotation = 0.918043
+shape = SubResource("CapsuleShape2D_7763y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qqw81")
+animation = &"walk"
